@@ -1,0 +1,8 @@
+version: '2'
+services:
+  temp-logger:
+    env_file: .env
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
