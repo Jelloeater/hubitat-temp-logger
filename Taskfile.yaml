@@ -17,9 +17,11 @@ tasks:
             - task: commit
             - task: pytest
     commit:
-        - task: format
-        - task: security
-        - task: docs
+        # Run all actions at same time
+        deps:
+            - task: format
+            - task: security
+            - task: docs
 
     setup:
         - python3 -m pip install pipx
