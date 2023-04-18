@@ -54,6 +54,7 @@ tasks:
         cmds:
             - poetry run isort --atomic . # Sort imports
             - poetry run black . # Format code
+            - poetry run autoflake --in-place --recursive .
             - poetry run flake8
     docs:
         silent: false

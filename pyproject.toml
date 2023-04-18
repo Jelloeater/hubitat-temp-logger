@@ -17,6 +17,7 @@ readme = "README.md"
 python = "^3.10"
 hubitatcontrol = {git = "https://github.com/Jelloeater/hubitatcontrol.git"}
 peewee = "^3.16.0"
+datetime = "^5.1"
 
 
 [tool.pytest.ini_options]
@@ -49,6 +50,9 @@ use_parentheses = "True"
 line_length = 120
 profile = "black"
 
+[tool.autoflake]
+check = true
+
 [tool.tartufo]
 repo-path = "."
 regex = true
@@ -77,6 +81,7 @@ python-dotenv = "*"
 
 [tool.poetry.group.dev.dependencies]
 setuptools = "*"
+autoflake = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-pycharm = "*"
