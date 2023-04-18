@@ -1,4 +1,8 @@
 digraph "classes" {
 rankdir=BT
 charset="utf-8"
+"temp_logger.db.Data" [color="black", fontcolor="black", label=<{Data|db : SqliteDatabase<br ALIGN="LEFT"/>|<I>get_temp_summary</I>(num_minutes_to_get: int)<br ALIGN="LEFT"/><I>get_temps</I>(num_minutes_to_get: int): list[time, {str, int}]<br ALIGN="LEFT"/><I>insert_temp</I>(sensor_name, temp)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"temp_logger.__main__.Main" [color="black", fontcolor="black", label=<{Main|hub : Hub<br ALIGN="LEFT"/>|get_hub()<br ALIGN="LEFT"/><I>get_temp_sensors_now</I>()<br ALIGN="LEFT"/><I>log_temperature_data</I>()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"temp_logger.db.TemperatureData.Meta" [color="black", fontcolor="black", label=<{Meta|database : SqliteDatabase<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"temp_logger.db.TemperatureData" [color="black", fontcolor="black", label=<{TemperatureData|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
 }

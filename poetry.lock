@@ -1315,6 +1315,17 @@ mako = "*"
 markdown = ">=3.0"
 
 [[package]]
+name = "peewee"
+version = "3.16.0"
+description = "a little orm"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "peewee-3.16.0.tar.gz", hash = "sha256:1800c0a04962ee99d161c07f5a12fc49549caf5cfcda426a9103e34e37f854ba"},
+]
+
+[[package]]
 name = "platformdirs"
 version = "3.2.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
@@ -2095,4 +2106,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7438fd929d9446dad6216c520082c8ee0061a4deb2fe5c932662a117fe055771"
+content-hash = "3f3ebe8c5c26fc25564d65b015fa9f479cb8f6980af56757093ed56ac4b10396"
