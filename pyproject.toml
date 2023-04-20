@@ -52,6 +52,11 @@ profile = "black"
 
 [tool.autoflake]
 check = true
+in-place = true
+expand-star-imports = true
+remove-unused-variables = true
+remove-duplicate-keys = true
+recursive = true
 
 [tool.tartufo]
 repo-path = "."
