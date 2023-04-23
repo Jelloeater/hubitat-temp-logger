@@ -2,9 +2,11 @@ import datetime
 
 import peewee as p
 
+DB_NAME = "temp_data.db"
+
 
 def setup_db_connection():
-    db = p.SqliteDatabase("temp_data.db")
+    db = p.SqliteDatabase(DB_NAME)
     db.connect()
     return db
 

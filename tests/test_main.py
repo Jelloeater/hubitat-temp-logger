@@ -16,6 +16,12 @@ class TestMain:
 
 
 class TestDB:
+    @classmethod
+    def teardown_class(cls):
+        db.TemperatureData.drop_table(safe=False)
+        if ".db" in db.setup_db_connection().database:
+            os.remove(db.setup_db_connection().database)
+
     def test_db_insert(self):
         d = db.TemperatureData()
         d.insert_temp(sensor_name="TempTempSensor", temp=random.randint(0, 100))
