@@ -29,3 +29,5 @@ if __name__ == "__main__":
 
 # TODO Get all temp sensors
 # TODO Add DB check
+
+# TODO Add Graph WebGUI https://plotly.com/python/line-charts/
