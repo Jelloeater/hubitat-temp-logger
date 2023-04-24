@@ -17,6 +17,7 @@ class Main:
         return hubitatcontrol.get_hub(host=host_env, token=token_env, app_id=app_id_env)
 
     def get_temp_sensors_now(self):
+        # TODO Need to pull all temp sensors into list
         pass
 
     def log_temperature_data(self):
