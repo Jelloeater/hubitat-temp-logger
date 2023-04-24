@@ -6,7 +6,7 @@ DB_NAME = "temp_data.db"
 
 
 def setup_db_connection():
-    db = p.SqliteDatabase(DB_NAME)
+    db = p.SqliteDatabase(DB_NAME, pragmas={"journal_mode": "wal", "foreign_keys": 1})
     db.connect()
     return db
 
