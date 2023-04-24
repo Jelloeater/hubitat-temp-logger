@@ -24,7 +24,7 @@ class TestDB:
 
     def test_db_insert(self):
         d = db.TemperatureData()
-        d.insert_temp(sensor_name="TempTempSensor", temp=random.randint(0, 100))
+        d.insert_temp_data(sensor_name="TempTempSensor", temp=random.randint(30, 80), humidity=random.randint(0, 100))
         # r = d.get_single_record()
         # assert r is not None
         # d.get_temps(60)

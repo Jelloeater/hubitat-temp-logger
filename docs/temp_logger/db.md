@@ -22,6 +22,9 @@
 `DoesNotExist`
 :   Common base class for all non-exit exceptions.
 
+`humidity`
+:
+
 `id`
 :
 
@@ -45,6 +48,6 @@
 `get_temps(self, num_minutes_to_get: int) ‑> list`
 :   Takes time range of past mins, and returns list of db rows w/ temp data
 
-`insert_temp(self, sensor_name: str, temp: int) ‑> None`
+`insert_temp_data(self, sensor_name: str, temp: int, humidity: int) ‑> None`
 :
 ```
