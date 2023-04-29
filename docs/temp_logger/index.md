@@ -1,5 +1,6 @@
-# Module temp_logger
+Module temp_logger
+==================
 
-## Sub-modules
-
-- temp_logger.db
+Sub-modules
+-----------
+* temp_logger.db

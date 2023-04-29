@@ -18,6 +18,11 @@ class Main:
 
     def get_temp_sensors_now(self):
         # TODO Need to pull all temp sensors into list
+        temp_sensors = []
+        for i in self.hub.devices:
+            x = self.hub.get_device_id(i["id"])
+            if "TemperatureMeasurement" in i["capabilities"]:
+                temp_sensors.append(i)
         pass
 
     def log_temperature_data(self):
