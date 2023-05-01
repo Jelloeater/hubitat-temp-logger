@@ -1,0 +1,7 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"temp_logger" [color="black", label=<temp_logger>, shape="box", style="solid"];
+"temp_logger.__main__" [color="black", label=<temp_logger.__main__>, shape="box", style="solid"];
+"temp_logger.db" [color="black", label=<temp_logger.db>, shape="box", style="solid"];
+}

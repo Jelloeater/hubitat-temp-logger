@@ -1,7 +1,8 @@
 
-n.n.n / 2023-04-29
+n.n.n / 2023-05-01
 ==================
 
+  * Added docs and release gen
   * wip: Starting on temp data input testing
   * doc: Added todo
   * wip: Started on temp data poll

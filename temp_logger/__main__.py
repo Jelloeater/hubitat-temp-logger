@@ -17,13 +17,13 @@ class Main:
         return hubitatcontrol.get_hub(host=host_env, token=token_env, app_id=app_id_env)
 
     def get_temp_sensors_now(self):
-        # TODO Need to pull all temp sensors into list
-        temp_sensors = []
-        for i in self.hub.devices:
-            x = self.hub.get_device_id(i["id"])
-            if "TemperatureMeasurement" in i["capabilities"]:
-                temp_sensors.append(i)
-        pass
+        temp_sensors = hubitatcontrol.get_all_temperature_sensors(self.get_hub())
+
+        for i in temp_sensors:
+            i.name
+            i.temperature
+            i.humidity
+            # TODO Add data log
 
     def log_temperature_data(self):
         pass

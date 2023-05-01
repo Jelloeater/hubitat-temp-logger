@@ -1,55 +1,53 @@
-Module temp_logger.db
-=====================
+# Module temp_logger.db
 
-Functions
----------
+## Functions
 
-    
 `setup_db_connection()`
-:   
+:
 
-Classes
--------
+## Classes
 
 `TemperatureData(*args, **kwargs)`
-:   
+:
 
-    ### Ancestors (in MRO)
+```
+### Ancestors (in MRO)
 
-    * peewee.Model
-    * peewee._metaclass_helper_
-    * peewee.Node
+* peewee.Model
+* peewee._metaclass_helper_
+* peewee.Node
 
-    ### Class variables
+### Class variables
 
-    `DoesNotExist`
-    :   Common base class for all non-exit exceptions.
+`DoesNotExist`
+:   Common base class for all non-exit exceptions.
 
-    `humidity`
-    :
+`humidity`
+:
 
-    `id`
-    :
+`id`
+:
 
-    `sensor_name`
-    :
+`sensor_name`
+:
 
-    `temp`
-    :
+`temp`
+:
 
-    `timestamp`
-    :
+`timestamp`
+:
 
-    ### Methods
+### Methods
 
-    `get_single_record(self) ‑> list[object]`
-    :
+`get_single_record(self) ‑> list[object]`
+:
 
-    `get_temp_summary(self, num_minutes_to_get: int)`
-    :
+`get_temp_summary(self, num_minutes_to_get: int)`
+:
 
-    `get_temps(self, num_minutes_to_get: int) ‑> list`
-    :   Takes time range of past mins, and returns list of db rows w/ temp data
+`get_temps(self, num_minutes_to_get: int) ‑> list`
+:   Takes time range of past mins, and returns list of db rows w/ temp data
 
-    `insert_temp_data(self, sensor_name: str, temp: int, humidity: int) ‑> None`
-    :
+`insert_temp_data(self, sensor_name: str, temp: int, humidity: int) ‑> None`
+:
+```
