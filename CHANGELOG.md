@@ -1,7 +1,8 @@
 
-n.n.n / 2023-05-01
+n.n.n / 2023-05-06
 ==================
 
+  * wip: Need to add data insert to DB next
   * Added docs and release gen
   * wip: Starting on temp data input testing
   * doc: Added todo

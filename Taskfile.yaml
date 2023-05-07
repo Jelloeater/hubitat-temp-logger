@@ -76,10 +76,9 @@ tasks:
             DOCKER_HOST: unix:///run/user/1000/docker.sock
         cmds:
             - docker-compose up
-    docker_build_and_run:
+    docker_run:
         cmds:
-            - docker-compose build
-            - docker-compose up # HTTP bind to 80
+            - docker-compose up --build --remove-orphans --force-recreate
 # Docker
     docker_deploy:
         - rsync -av --filter=':- .gitignore' . root@{{.HOST}}:/{{.FOLDER}}/
