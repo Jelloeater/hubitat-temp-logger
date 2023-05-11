@@ -60,15 +60,17 @@ tasks:
         silent: false
         interactive: false
         cmds:
-            - rm -f CHANGELOG.md
-            - git-changelog -a -x >> CHANGELOG.md
-            # - poetry run mdformat CHANGELOG.md
-            - git add CHANGELOG.md
             - rm -rf docs
             - poetry run pdoc3 {{.BUILD_DIR}} -o docs -f
             - poetry run pyreverse {{.BUILD_DIR}} -d docs
             - poetry run mdformat docs
             - git add docs
+    changelog:
+        - rm -f CHANGELOG.md
+        - git-changelog -a -x >> CHANGELOG.md
+        # - poetry run mdformat CHANGELOG.md
+        - git add CHANGELOG.md
+        - git commit -a --amend --no-edit --no-verify
     docker-purge: docker system prune -a -f --volumes
     start_webserver: poetry run python3 pl_worker/webserver.py
     start_docker_rootless:

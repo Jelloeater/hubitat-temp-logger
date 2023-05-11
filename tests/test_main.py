@@ -12,11 +12,11 @@ os.environ.setdefault("PL_TEST_MODE", str(True))
 
 class TestMain:
     def test_check_hub(self):
-        assert tl.Main.get_hub().devices is not None
+        assert tl.Main().hub is not None
 
-    def test_get_temp_data(self):
-        x = tl.Main().get_temp_sensors_now()
-        assert x is not None
+    def test_log_data(self):
+        tl.Main().log_temperature_data()
+        assert tl.db.TemperatureData().get_single_record()
 
 
 class TestDB:

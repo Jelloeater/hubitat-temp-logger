@@ -2,6 +2,8 @@ import os
 
 import hubitatcontrol
 
+import temp_logger.db as db
+
 
 class Main:
     def __init__(self):
@@ -14,17 +16,11 @@ class Main:
         if self.hub.devices is None:
             raise Exception("Cannot access hub")
 
-    def get_temp_sensors_now(self):
-        temp_sensors = self.hub.devices()
+    def log_temperature_data(self):
+        temp_sensors = hubitatcontrol.get_all_environmental_sensors(self.hub)
 
         for i in temp_sensors:
-            i.name
-            i.temperature
-            i.humidity
-            # TODO Add data log
-
-    def log_temperature_data(self):
-        pass
+            db.TemperatureData().insert_temp_data(sensor_name=i.name, temp=i.temperature, humidity=i.humidity)
 
 
 if __name__ == "__main__":

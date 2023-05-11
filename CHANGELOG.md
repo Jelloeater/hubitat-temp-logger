@@ -1,7 +1,9 @@
 
-n.n.n / 2023-05-09
+n.n.n / 2023-05-11
 ==================
 
+  * feat: Added data logging
+  * wip: Troubleshooting
   * Update build cmd
   * wip: Need to add data insert to DB next
   * Added docs and release gen
