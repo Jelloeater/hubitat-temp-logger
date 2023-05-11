@@ -18,6 +18,13 @@ class TestMain:
         tl.Main().log_temperature_data()
         assert tl.db.TemperatureData().get_single_record()
 
+    def test_db_min_get(self):
+        d = db.TemperatureData()
+        temps = d.get_temps(99)
+        for i in temps:
+            print(i)
+        assert temps is not None
+
 
 class TestDB:
     @classmethod
@@ -37,10 +44,3 @@ class TestDB:
         d = db.TemperatureData()
         r = d.get_single_record()
         assert r is not None
-
-    def test_db_min_get(self):
-        d = db.TemperatureData()
-        temps = d.get_temps(99)
-        for i in temps:
-            print(i)
-        assert temps is not None
