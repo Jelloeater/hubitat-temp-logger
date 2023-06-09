@@ -7,7 +7,7 @@
 
 ## Classes
 
-`TemperatureData(*args, **kwargs)`
+`ModelBase(*args, **kwargs)`
 :
 
 ```
@@ -17,10 +17,32 @@
 * peewee._metaclass_helper_
 * peewee.Node
 
+### Descendants
+
+* temp_logger.db.TemperatureDataModel
+
 ### Class variables
 
 `DoesNotExist`
 :   Common base class for all non-exit exceptions.
+
+`id`
+:
+```
+
+`TemperatureData(*args, **kwargs)`
+:
+
+```
+### Ancestors (in MRO)
+
+* temp_logger.db.TemperatureDataModel
+* temp_logger.db.ModelBase
+* peewee.Model
+* peewee._metaclass_helper_
+* peewee.Node
+
+### Class variables
 
 `humidity`
 :
@@ -39,7 +61,7 @@
 
 ### Methods
 
-`get_single_record(self) ‑> list[object]`
+`get_single_record(self) ‑> dict`
 :
 
 `get_temp_summary(self, num_minutes_to_get: int)`
@@ -49,5 +71,38 @@
 :   Takes time range of past mins, and returns list of db rows w/ temp data
 
 `insert_temp_data(self, sensor_name: str, temp: int, humidity: int) ‑> None`
+:
+```
+
+`TemperatureDataModel(*args, **kwargs)`
+:
+
+```
+### Ancestors (in MRO)
+
+* temp_logger.db.ModelBase
+* peewee.Model
+* peewee._metaclass_helper_
+* peewee.Node
+
+### Descendants
+
+* temp_logger.db.TemperatureData
+
+### Class variables
+
+`humidity`
+:
+
+`id`
+:
+
+`sensor_name`
+:
+
+`temp`
+:
+
+`timestamp`
 :
 ```

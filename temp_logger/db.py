@@ -13,28 +13,32 @@ def setup_db_connection():
     return db
 
 
-class TemperatureData(p.Model):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.create_table()
+class ModelBase(p.Model):
+    class Meta:
+        database = setup_db_connection()
 
+
+class TemperatureDataModel(ModelBase):
     timestamp = p.DateTimeField(unique=True)
     sensor_name = p.TextField()
     temp = p.IntegerField()
     humidity = p.IntegerField()
 
-    class Meta:
-        database = setup_db_connection()
+
+class TemperatureData(TemperatureDataModel):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.create_table()
 
     def get_temps(self, num_minutes_to_get: int) -> list:
         """
         Takes time range of past mins, and returns list of db rows w/ temp data
         """
         return self.select().where(
-            TemperatureData.timestamp < (datetime.datetime.utcnow() + datetime.timedelta(minutes=num_minutes_to_get))
+            self.timestamp < (datetime.datetime.utcnow() + datetime.timedelta(minutes=num_minutes_to_get))
         )
 
-    def get_single_record(self) -> list[object]:
+    def get_single_record(self) -> dict:
         return self.select().get()
 
     def get_temp_summary(self, num_minutes_to_get: int):

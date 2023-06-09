@@ -2,6 +2,10 @@ digraph "classes" {
 rankdir=BT
 charset="utf-8"
 "temp_logger.__main__.Main" [color="black", fontcolor="black", label=<{Main|hub : Hub<br ALIGN="LEFT"/>|log_temperature_data()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"temp_logger.db.TemperatureData.Meta" [color="black", fontcolor="black", label=<{Meta|database : SqliteDatabase<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"temp_logger.db.TemperatureData" [color="black", fontcolor="black", label=<{TemperatureData|humidity : IntegerField<br ALIGN="LEFT"/>humidity : int<br ALIGN="LEFT"/>sensor_name : TextField<br ALIGN="LEFT"/>sensor_name : str<br ALIGN="LEFT"/>temp : IntegerField<br ALIGN="LEFT"/>temp : int<br ALIGN="LEFT"/>timestamp : DateTimeField<br ALIGN="LEFT"/>timestamp : datetime<br ALIGN="LEFT"/>|get_single_record(): list[object]<br ALIGN="LEFT"/><I>get_temp_summary</I>(num_minutes_to_get: int)<br ALIGN="LEFT"/>get_temps(num_minutes_to_get: int): list<br ALIGN="LEFT"/>insert_temp_data(sensor_name: str, temp: int, humidity: int): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"temp_logger.db.ModelBase.Meta" [color="black", fontcolor="black", label=<{Meta|database : SqliteDatabase<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"temp_logger.db.ModelBase" [color="black", fontcolor="black", label=<{ModelBase|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"temp_logger.db.TemperatureData" [color="black", fontcolor="black", label=<{TemperatureData|humidity : int<br ALIGN="LEFT"/>sensor_name : str<br ALIGN="LEFT"/>temp : int<br ALIGN="LEFT"/>timestamp : datetime<br ALIGN="LEFT"/>|get_single_record(): dict<br ALIGN="LEFT"/><I>get_temp_summary</I>(num_minutes_to_get: int)<br ALIGN="LEFT"/>get_temps(num_minutes_to_get: int): list<br ALIGN="LEFT"/>insert_temp_data(sensor_name: str, temp: int, humidity: int): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"temp_logger.db.TemperatureDataModel" [color="black", fontcolor="black", label=<{TemperatureDataModel|humidity : IntegerField<br ALIGN="LEFT"/>sensor_name : TextField<br ALIGN="LEFT"/>temp : IntegerField<br ALIGN="LEFT"/>timestamp : DateTimeField<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"temp_logger.db.TemperatureData" -> "temp_logger.db.TemperatureDataModel" [arrowhead="empty", arrowtail="none"];
+"temp_logger.db.TemperatureDataModel" -> "temp_logger.db.ModelBase" [arrowhead="empty", arrowtail="none"];
 }

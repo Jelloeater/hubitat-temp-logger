@@ -1,3 +1,4 @@
+import logging
 import os
 import random
 
@@ -18,11 +19,18 @@ class TestMain:
         tl.Main().log_temperature_data()
         assert tl.db.TemperatureData().get_single_record()
 
+    def test_db_single(self):
+        d = db.TemperatureData()
+        s = d.get_single_record()
+        assert s is not None
+
     def test_db_min_get(self):
+        # TODO Finish time based data get
+        # TODO Add casting for return data type
         d = db.TemperatureData()
         temps = d.get_temps(99)
         for i in temps:
-            print(i)
+            logging.debug(i)
         assert temps is not None
 
 
